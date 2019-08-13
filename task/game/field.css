@@ -4,14 +4,16 @@ body{
   border: 0;
 }
 .border{
-  z-index: -15;
+          z-index: -15;
           position: absolute;
           top: 9px;
-          background-color: #556B2F;
+          background-color: #FFFFFF;
           left: 39px;
           width: 510px;
           height: 559px;
           border: 2px solid #001100;
+          left: 50%;
+          margin-left: -25%;
   }
 
 .button{
@@ -19,11 +21,12 @@ body{
       display: block;
       position: relative;
       margin: 0 auto;
+      margin-top: 10px;
 }
 .field{
       z-index: 30;
       height: 23px;
-      margin-left: 53px;
+      margin-left: 15px;
 }
 .cell{
       margin: 0;

@@ -1,16 +1,13 @@
-let div = document.createElement('div');
-document.body.appendChild(div);
+let border = document.createElement('div');
+border.className = 'border';
+document.body.appendChild(border);
 
+let yourScore = 0;
 let text = document.createElement('p');
-text.innerText = 'Score';
+text.innerText = `Score: ${yourScore}`;
+text.id = 'score';
 text.style.textAlign = 'center';
-div.appendChild(text);
-
-let score = document.createElement('p');
-score.innerText = '0';
-score.style.textAlign = 'center';
-score.id = 'score';
-div.appendChild(score);
+border.appendChild(text);
 
 //начальные координаты змейки
 let snakeStart = [[10,8],[10,9],[10,10]];
@@ -20,8 +17,10 @@ function Init(){
     snake.className = 'cell snake';
   }
 }
+
 //начальное направление
 let direction = [0,1];
+let head = [10,10];
 //движение змейки
 function Move(){
   //определяем по нажатию клавиши направление змейки
@@ -29,42 +28,44 @@ function Move(){
       direction[1] = (e.keyCode - 38) % 2, direction[0] = (e.keyCode - 39) % 2;
   };
   //меняем направление головы
-  let head = snakeStart[length-1].map(function(item, index){return item + direction[index]});
+  head = snakeStart[length-1].map((item, index) => {
+    return item + direction[index]
+  });
 
   let nextStep = document.getElementById(head.join());
-  // console.log('!! ' + nextStep.id);
   if (nextStep == null){
     clearInterval(timer);
-    alert('you lose');
+    alert('you lose\nYour score: ' + document.getElementById('score').innerText.split(' ')[1]);
     window.location.reload();
   }
 
-if (nextStep != null && nextStep.className == 'cell'){
-  //удаляем хвост
-  let tail = snakeStart.shift();
-  document.getElementById(tail.join()).className = 'cell';
-  //добавляем голову
-  snakeStart.push(head);
-  document.getElementById(head.join()).className = 'cell snake';
-} else
-    if (nextStep != null && nextStep.className == 'cell apple'){
-      console.log(head);
+  if (nextStep != null && nextStep.className == 'cell'){
+    //удаляем хвост
+    let tail = snakeStart.shift();
+    document.getElementById(tail.join()).className = 'cell';
+    //добавляем голову
     snakeStart.push(head);
+    document.getElementById(head.join()).className = 'cell snake';
+  } else if (nextStep != null && nextStep.className == 'cell apple') {
+    snakeStart.push(head);
+    length++;
     nextStep.className = 'cell snake';
-    createApple(oX, oY);
-    document.getElementById('score').innerText = Number.parseInt(document.getElementById('score').innerText) + 1;
-    console.log(snakeStart);
+    createApple(...coord);
+    yourScore++;
+    document.getElementById('score').innerText = `Score: ${yourScore}`;
+  } else if (nextStep != null && nextStep.className == 'cell snake') {
+    clearInterval(timer);
+    alert('you eat yourself\nYour score: ' + document.getElementById('score').innerText.split(' ')[1]);
+    window.location.reload();
   }
 }
 
 let length = 3;
-let oX = 20;
-let oY = 20;
-// создаем поле игры
+let coord = [20,20];
 function field(oX, oY) {
   for (let x = 0; x < oX; x++){
     let cordX = document.createElement('div');
-    document.body.appendChild(cordX);
+    border.appendChild(cordX);
     cordX.className = 'field';
     for (let y = 0; y < oY; y++){
       let cordY = document.createElement('div');
@@ -83,26 +84,28 @@ function createApple(oX, oY){
   if (apple.className == 'cell'){
     apple.className = 'cell apple';
   } else{
-    createApple(oX, oY);
+    createApple(...coord);
   }
   return apple;
 }
 
 //создаем поле
-field(oX, oY);
+field(...coord);
 
 let buttons = document.createElement('div');
-document.body.appendChild(buttons);
+border.appendChild(buttons);
 let button = document.createElement('button');
 button.className = 'button';
 button.setAttribute('onclick', "Start()");
 button.innerText = 'Start';
 buttons.appendChild(button);
 
-function Start(){
+
   Init();
+function Start(){
+
   timer = setInterval(function(){
              Move();
           },400);
-  createApple(oX, oY);
+  createApple(...coord);
 }
