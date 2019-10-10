@@ -178,17 +178,36 @@ const films = [
 //второе задание
 let actors = [];
 let actor = [];
-films.forEach(function(item, i, films){
+films.forEach(function(item, i){
   if (item.creationYear > 1995){
-    item.actors.forEach(function(item, i) {
+    item.actors.forEach(function(item, i){
       actors[i] = item.name;
     });
-     if (actors.indexOf('Tom Hanks') > -1){
-       actors.splice(actors.indexOf('Tom Hanks'), 1)
-       console.log(actors);
-       //actor += actors.slice();
-     }
-     actor[i] = actors.slice();
-     actors = [];
+
+    if (actors.some(isTom)){
+      actors.splice(actors.indexOf('Tom Hanks'), 1)
+      actor = actor.concat(actors);
+    }
+
+    actors = [];
   }
 });console.log(actor);
+
+function isTom(name) {
+  return name == 'Tom Hanks';
+}
+
+//третье задание
+let sum = 0;
+let actors2 = [];
+films.forEach(function(item, i){
+  if (item.director.age < 70){
+    item.actors.forEach(function(item, i){
+      actors2[i] = item.name;
+    });
+    if (!actors2.some(isTom)){
+      sum += parseInt(item.budget.substring(1, item.budget.length).replace(/\s/g, ''));
+    }
+  }
+});
+console.log(sum);

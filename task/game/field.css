@@ -1,0 +1,53 @@
+body{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.border{
+          z-index: -15;
+          position: absolute;
+          top: 9px;
+          background-color: #FFFFFF;
+          left: 39px;
+          width: 510px;
+          height: 559px;
+          border: 2px solid #001100;
+          left: 50%;
+          margin-left: -25%;
+  }
+
+.button{
+      height: 30px;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      margin-top: 10px;
+}
+.field{
+      z-index: 30;
+      height: 23px;
+      margin-left: 15px;
+}
+.cell{
+      margin: 0;
+      display: inline-block;
+      background-color: #7FFFD4;
+      width: 22px;
+      height: 22px;
+      border: 1px solid #010;
+      border-radius: 4px;
+      z-index: 30;
+      transition: background-color 0.3s;
+}
+.apple{
+      background-color:#FF0000;
+      z-index: 30;
+      box-shadow: 0 0 10px #000000 inset;
+      transition: background-color 2s;
+}
+.snake{
+      box-shadow: 0 0 10px #000000 inset;
+      background: linear-gradient(to right, #00FF00, #556B2F);
+      z-index: 30;
+      transition: background 0.2s;
+}
