@@ -1,7 +1,7 @@
 import React from 'react';
 import Company from './company.js';
 import Contacts from './contacts.js';
-// import Links from './links.js';
+import Links from './links.js';
 
 export default class FooterBlocks extends React.Component {
   render() {
@@ -9,28 +9,29 @@ export default class FooterBlocks extends React.Component {
       <div className="footer_wrapper">
         <Company />
         <Contacts />
+        <Links left={left} right={right} social={social} />
       </div>
     );
   }
 }
 
-const left=[
-  {name:'Projects'},
+const left = [
+  {name: 'Projects'},
   {name: 'About'},
   {name: 'Services'},
-  {name: 'Career'}
+  {name: 'Career'},
 ];
 
 const right=[
-  {name:'News'},
+  {name: 'News'},
   {name: 'Events'},
   {name: 'Contact'},
-  {name: 'Legals'}
+  {name: 'Legals'},
 ];
 
 const social=[
-  {name:'Facebook'},
+  {name: 'Facebook'},
   {name: 'Twitter'},
   {name: 'Instagram'},
-  {name: 'Dribble'}
+  {name: 'Dribble'},
 ];

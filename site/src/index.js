@@ -39,8 +39,6 @@ class App extends React.Component {
   }
 }
 
-
-
 const bar = [
   {name:'UI/UX DESIGN',
   percent: 75},
@@ -48,7 +46,7 @@ const bar = [
   percent: 90},
   {name:'MARKETING',
   percent: 65}
-]
+];
 
 
 const pict = [

@@ -1,22 +1,22 @@
 import React from 'react';
-import LinksItem from './links.js';
+import LinksItem from './linksItem.js';
 
 export default class Links extends React.Component {
   render() {
     return (
       <>
-        <div class="block_links_left">
-          {this.props.left.map((index, item) => (
+        <div className="block_links_left">
+          {this.props.left.map((item, index) => (
             <LinksItem id={index} name={item.name}/>
           ))}
         </div>
-        <div class="block_links_right">
-        {this.props.right.map((index, item) => (
+        <div className="block_links_right">
+        {this.props.right.map((item, index) => (
           <LinksItem id={index} name={item.name}/>
         ))}
         </div>
-        <div class="block_social">
-        {this.props.social.map((index, item) => (
+        <div className="block_social">
+        {this.props.social.map((item, index) => (
           <LinksItem id={index} name={item.name}/>
         ))}
         </div>
