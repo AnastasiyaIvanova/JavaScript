@@ -7,17 +7,17 @@ export default class Links extends React.Component {
       <>
         <div className="block_links_left">
           {this.props.left.map((item, index) => (
-            <LinksItem id={index} name={item.name}/>
+            <LinksItem key={index} name={item.name}/>
           ))}
         </div>
         <div className="block_links_right">
         {this.props.right.map((item, index) => (
-          <LinksItem id={index} name={item.name}/>
+          <LinksItem key={index} name={item.name}/>
         ))}
         </div>
         <div className="block_social">
         {this.props.social.map((item, index) => (
-          <LinksItem id={index} name={item.name}/>
+          <LinksItem key={index} name={item.name}/>
         ))}
         </div>
       </>

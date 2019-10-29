@@ -85,7 +85,7 @@ const clients = [
 ];
 
 const service = [
-  {pic:'pdiamond',
+  {pic:'diamond',
   text:'Be set fourth land god darkness make it wherein own',
   name:'UI/UX DESIGN'},
   {pic:'arc',

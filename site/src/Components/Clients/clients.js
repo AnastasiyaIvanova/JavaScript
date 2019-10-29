@@ -4,9 +4,9 @@ import ClientsItem from './clientsItem.js';
 export default class Clients extends React.Component {
   render() {
     return (
-      <div class="main_clients">
+      <div className="main_clients">
       {this.props.img.map((item, index) => (
-        <ClientsItem id={index} img={item.name} />
+        <ClientsItem key={index} img={item.name} />
       ))}
       </div>
     );

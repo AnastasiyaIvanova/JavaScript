@@ -4,10 +4,10 @@ import ServicesItems from './servicesItems.js';
 export default class Services extends React.Component {
   render() {
     return(
-      <div class="main_services">
-				<div class="services">
+      <div className="main_services">
+				<div className="services">
         {this.props.serv.map((item, index) => (
-          <ServicesItems id={index} picture={item.pic} text={item.text} name={item.name} />
+          <ServicesItems key={index} picture={item.pic} text={item.text} name={item.name} />
         ))}
 				</div>
 			</div>

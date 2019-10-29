@@ -9,7 +9,7 @@ export default class Skills extends React.Component {
           <h1>Professional Skills</h1>
           <ul>
             {this.props.info.map((item, index) => (
-              <Progress id={index} bar={item.name} percent={item.percent} />
+              <Progress key={index} bar={item.name} percent={item.percent} />
             ))}
           </ul>
         </div>

@@ -3,9 +3,9 @@ export default class ExamplesItem extends React.Component {
   render() {
     return(
       <div>
-        <img src={`/Photo/${this.props.img}`}/>
+        <img src={`/Photo/${this.props.img}`} alt = ""/>
         <div>
-          <i class="pe-7s-look"></i>
+          <i className="pe-7s-look"></i>
         </div>
       </div>
     );
