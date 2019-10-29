@@ -1,0 +1,14 @@
+h1{
+  color: #2F2F2F;
+  font-family: Helvetica;
+  font-size: 30px;
+  line-height: 36px;
+  position: absolute;
+}
+.rest{
+  width: 1220px;
+  margin: 0 auto;
+  position: relative;
+  top: 48px;
+  left: 18px;
+}

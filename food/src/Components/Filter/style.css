@@ -1,0 +1,27 @@
+select{
+		position: absolute;
+		left: 175px;
+		height: 36px;
+    width: 139px;
+    border-radius: 18px;
+    background-color: #F1F1F2;
+    border: none;
+    padding-left: 29.5px;
+    color: #6D7278;
+    font-family: Helvetica;
+    font-size: 14px;
+    line-height: 17px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		background-image: url(/Pictures/Shape.png);
+		background-repeat: no-repeat;
+		background-position: 114px;
+}
+select:after {
+  width: 14px;
+  height: 8px;
+  position: absolute;
+  /* background: url(/Pictures/Shape.png); */
+}

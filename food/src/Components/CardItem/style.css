@@ -1,0 +1,93 @@
+.cards{
+  display: grid;
+  grid-template-columns: 386px 386px 386px;
+  grid-template-rows: 242px 242px 242px;
+  grid-column-gap: 21px;
+  grid-row-gap: 20px;
+  position: absolute;
+  top: 67px;
+}
+.card {
+  position: absolute;
+  /* top: 67px; */
+  height: 242px;
+  width: 386px;
+  box-shadow: 0 15px 18px 0 rgba(201,201,201,0.5);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.pic{
+  position: relative;
+}
+.rectangle {
+  height: 77px;
+  width: 107px;
+  border-radius: 10px 10px 0 0;
+  background-color: #FFFFFF;
+  position: absolute;
+  left: 140px;
+  bottom: 98px;
+  text-align: center;
+}
+.logo{
+      margin-top: 10px;
+}
+h2{
+  color: #333333;
+  font-family: Helvetica;
+  font-size: 17px;
+  line-height: 21px;
+  margin-left: 19px;
+  margin-top: 16px;
+}
+.food{
+  color: #7E7E7E;
+  font-family: Helvetica;
+  font-size: 11px;
+  line-height: 21px;
+  margin-left: 19px;
+}
+.star{
+  color: #EF4E23;
+  padding-left: 20px;
+  position: absolute;
+}
+.info{
+  position: relative;
+}
+.rating{
+  color: #FF3C00;
+  font-family: Helvetica;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 23px;
+  margin-left: 19px;
+  position: absolute;
+  left: 21.5px;
+  font-weight: bold;
+}
+.clock{
+  position: absolute;
+  left: 204px;
+  top: 4px;
+}
+.time{
+  color: #7E7E7E;
+  font-family: Helvetica;
+  font-size: 12px;
+  line-height: 24px;
+  position: absolute;
+  left: 225px;
+}
+.car{
+  position: absolute;
+    height: 11.1px;	width: 15.84px;
+    top: 7px;
+    left: 302px;
+}
+.cost{
+  color: #7E7E7E;	font-family: Helvetica;	font-size: 12px;	line-height: 14px;
+    position: absolute;
+    left: 324px;
+    top: 5px;
+}
